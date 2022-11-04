@@ -51,7 +51,7 @@
                                 <b>$2.99</b>
                             </div>
                             <div class = "coffee-quantity">
-                                <select id = "quantity" disabled>
+                                <select id = "Espresso-quantity" disabled>
                                     <option selected=""></option>
                                     <option value = "1">1</option>
                                     <option value = "2">2</option>
@@ -79,7 +79,7 @@
                                 <b>$3.99</b>
                             </div>
                             <div class = "coffee-quantity">
-                                <select id = "quantity" disabled>
+                                <select id = "Americano-quantity" disabled>
                                     <option selected=""></option>
                                     <option value = "1">1</option>
                                     <option value = "2">2</option>
@@ -107,7 +107,7 @@
                                 <b>$4.99</b>
                             </div>
                             <div class = "coffee-quantity">
-                                <select id = "quantity" disabled>
+                                <select id = "Cappuccino-quantity" disabled>
                                     <option selected=""></option>
                                     <option value = "1">1</option>
                                     <option value = "2">2</option>
@@ -124,19 +124,11 @@
                         <div class = "item" id = "selected-quantity"><b>Quantity:</b> </div>
                         <div class = "item" id = "selected-size">
                             <b>Size:</b>
-                            <select id = "selected-temperature">
+                            <select id = 'size'>
                                 <option selected = ""></option>
                                 <option value = "Small">Small</option>
                                 <option value = "Medium">Medium</option>
                                 <option value = "Large">Large</option>
-                            </select>
-                        </div>
-                        <div class = "item" id = "selected-temp">
-                            <b>Temperature:</b>
-                            <select id = "selected-temperature">
-                                <option selected = ""></option>
-                                <option value = "Hot">Hot</option>
-                                <option value = "Cold">Cold</option>
                             </select>
                         </div>
                     </div>
@@ -162,7 +154,7 @@
                         <button class = "btn btn-primary" type = "submit">Place Order</button>
                         <div>
                             <input class = "btn btn-primary" type = "reset" value = "Clear" onclick = "Clear()">
-                            <input class = "btn btn-primary" type = "button" value = "Calculate" onclick = "Calculate()">
+                            <!-- <input class = "btn btn-primary" type = "button" value = "Calculate" onclick = "Calculate()"> -->
                         </div>
                     </div>
 
@@ -183,10 +175,17 @@
                 const coffee = document.querySelector('input[name=flexRadioDefault]:checked');
                 document.getElementById('selected-type').innerHTML = '<b>Type:</b> ' + coffee.value;
 
-                document.getElementById('quantity')[0].removeAttribute('disabled');
-                
+                // if ($(e.target).hasClass('coffee')) {
+                //     if (coffee) coffee.className = 'list-group-item coffee';
+                //     e.target.className = 'list-group-item coffee active';
+                // }
+                const all = document.querySelectorAll('select');
+                if (all.forEach(x => x.hasAttribute()))
+                document.getElementById(`${coffee.value}-quantity`).toggleAttribute('disabled');
             });
             
+
+
             // document.getElementById('quantity').addEventListener('change', function() {
             //     console.log(this.value);    
             //     document.getElementById('selected-quantity').innerHTML = '<b>Quantity:</b> ' + this.value;
