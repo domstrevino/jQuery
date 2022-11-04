@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        
+        <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel = "stylesheet" integrity = "sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin = "anonymous">        
+        <link rel="stylesheet" href="Index.css">
+
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity = "sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin = "anonymous" referrerpolicy = "no-referrer"></script>
+        <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <title>Zips Coffee</title>
+    </head>
+
+    <body>
+        <div class = "container">
+            <div class = "card">
+                <form class = "needs-validation" id = "form" onsubmit = "ValidateForm()" validate>
+                    <div class = "card-header">
+                        <h1 class = "header">
+                            Zips Coffee
+                        </h1>
+                    </div>
+                    <div class = "card-header">
+                        <div class = "left"></div>
+                        <div class = "left-center"></div>
+                        <div class = "center">Type</div>
+                        <div class = "right-center">Price</div>
+                        <div class = "right">#</div>
+                    </div>
+
+                    <ul class = "list-group list-group-flush">
+                        <li class = "list-group-item">
+                            <div class = "coffee-choice">
+                                <input class = "form-check-input" type = "radio" name = "flexRadioDefault" id = "Espresso" value = "Espresso" required>
+                            </div>
+                            <div class = "coffee-image">
+                                <img style = "width: 100%;" src = "Espresso.jfif" alt = "Espresso">
+                            </div>
+                            <div class = "coffee-type">
+                                <b>Espresso</b>
+                                <div class = "ingredients">
+                                    <div>-0.5 Cup Ground Coffee</div>
+                                    <div>-1.5 Cup Cold Water</div>
+                                </div>
+                            </div>
+                            <div class = "coffee-price">
+                                <b>$2.99</b>
+                            </div>
+                            <div class = "coffee-quantity">
+                                <select id = "quantity" disabled>
+                                    <option selected=""></option>
+                                    <option value = "1">1</option>
+                                    <option value = "2">2</option>
+                                    <option value = "3">3</option>
+                                    <option value = "4">4</option>
+                                    <option value = "5">5</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class = "list-group-item">
+                            <div class = "coffee-choice">
+                                <input class = "form-check-input" type = "radio" name = "flexRadioDefault" id = "Americano" value = "Americano" required>
+                            </div>
+                            <div class = "coffee-image">
+                                <img style = "width: 100%;" src = "Americano.jpg" alt = "Americano">
+                            </div>
+                            <div class = "coffee-type">
+                                <b>Americano</b>
+                                <div class = "ingredients">
+                                    <div>-ingredient</div>
+                                    <div>-ingredient</div>
+                                </div>
+                            </div>
+                            <div class = "coffee-price">
+                                <b>$3.99</b>
+                            </div>
+                            <div class = "coffee-quantity">
+                                <select id = "quantity" disabled>
+                                    <option selected=""></option>
+                                    <option value = "1">1</option>
+                                    <option value = "2">2</option>
+                                    <option value = "3">3</option>
+                                    <option value = "4">4</option>
+                                    <option value = "5">5</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class = "list-group-item">
+                            <div class = "coffee-choice">
+                                <input class = "form-check-input" type = "radio" name = "flexRadioDefault" id = "Cappuccino" value = "Cappuccino" required>
+                            </div>
+                            <div class = "coffee-image">
+                                <img style = "width: 100%;" src = "Cappuccino.jpg" alt = "Americano">
+                            </div>
+                            <div class = "coffee-type">
+                                <b>Cappuccino</b>
+                                <div class = "ingredients">
+                                    <div>-ingredient</div>
+                                    <div>-ingredient</div>
+                                </div>
+                            </div>
+                            <div class = "coffee-price">
+                                <b>$4.99</b>
+                            </div>
+                            <div class = "coffee-quantity">
+                                <select id = "quantity" disabled>
+                                    <option selected=""></option>
+                                    <option value = "1">1</option>
+                                    <option value = "2">2</option>
+                                    <option value = "3">3</option>
+                                    <option value = "4">4</option>
+                                    <option value = "5">5</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                
+                    <div class = "selected-items">
+                        <div class = "item" id = "selected-type"><b>Type:</b> </div>
+                        <div class = "item" id = "selected-quantity"><b>Quantity:</b> </div>
+                        <div class = "item" id = "selected-size">
+                            <b>Size:</b>
+                            <select id = "selected-temperature">
+                                <option selected = ""></option>
+                                <option value = "Small">Small</option>
+                                <option value = "Medium">Medium</option>
+                                <option value = "Large">Large</option>
+                            </select>
+                        </div>
+                        <div class = "item" id = "selected-temp">
+                            <b>Temperature:</b>
+                            <select id = "selected-temperature">
+                                <option selected = ""></option>
+                                <option value = "Hot">Hot</option>
+                                <option value = "Cold">Cold</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="calculations">
+                        <div class = "item">
+                            <label for = "subtotal">Subtotal:</label>
+                            <input type = "text" id = "subtotal" value = "$0.00" disabled readonly>
+                        </div>
+                        <div class = "item">
+                            <label for = "tax">Tax:</label>
+                            <input type = "text" id = "tax" value = "$0.00" disabled readonly>
+                        </div>
+                        <div class = "item">
+                            <label for = "total">Total:</label>
+                            <input type = "text" id = "total" value = "$0.00" disabled readonly>
+                        </div>
+                    </div>
+
+
+                    <!--NOT DONE-->
+                    <div class = "card-footer">
+                        <button class = "btn btn-primary" type = "submit">Place Order</button>
+                        <div>
+                            <input class = "btn btn-primary" type = "reset" value = "Clear" onclick = "Clear()">
+                            <input class = "btn btn-primary" type = "button" value = "Calculate" onclick = "Calculate()">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- SCRIPTS -->
+        <script>
+            document.querySelector('ul').addEventListener('click', function(e) {
+                const coffee = document.querySelector('input[name=flexRadioDefault]:checked');
+                document.getElementById('selected-type').innerHTML = '<b>Type:</b> ' + coffee.value;
+
+                document.getElementById('quantity')[0].removeAttribute('disabled');
+                
+            });
+            
+            // document.getElementById('quantity').addEventListener('change', function() {
+            //     console.log(this.value);    
+            //     document.getElementById('selected-quantity').innerHTML = '<b>Quantity:</b> ' + this.value;
+                
+            // });
+            
+            
+            // function Clear() {
+            //     $('li').removeClass('active');
+                
+            //     document.getElementById('form').reset();
+            //     document.getElementById('selected-temp').innerHTML = 'Temperature: ';
+            //     document.getElementById('selected-type').innerHTML = 'Coffee Type: ';
+            //     document.getElementById('selected-size').innerHTML = 'Coffee Size: ';
+            // };
+
+            // function Calculate() {
+            //     var price = 0.00;
+            //     var foam = 0.00;
+            //     var tax = 0.00;
+            //     var total = 0.00;
+            //     var subtotal = 0.00;
+            //     var quantity = Number(document.getElementById('selected-quantity').value);
+
+            //     switch (document.getElementById('selected-size').innerHTML) {
+            //         case 'Coffee Size: Small':
+            //             price = 2.99;
+            //             break;
+            //         case 'Coffee Size: Medium':
+            //             price = 3.99;
+            //             break;
+            //         case 'Coffee Size: Large':
+            //             price = 4.99;
+            //             break;
+            //     }
+            //     if (document.getElementById('selected-foam').checked) {
+            //         foam = 0.99;
+            //     }
+
+            //     subtotal = (price + foam) * quantity;
+            //     tax = (subtotal * 0.0675).toFixed(2);
+            //     total = subtotal + Number(tax);
+                
+            //     document.getElementById('subtotal').value = '$' + subtotal.toFixed(2);
+            //     document.getElementById('tax').value = '$' + tax;
+            //     document.getElementById('total').value = '$' + total.toFixed(2);
+            // };
+
+            // function ValidateForm() {
+            //     event.preventDefault();
+            //     if (total.value === '$0.00') {
+            //         alert('You must complete the order form to place an order.');
+            //         return false;
+            //     }
+            //     else {
+            //         Clear();
+            //         window.open("output.html", "");
+            //     }
+                
+            // };
+        </script>
+    </body>
+</html>
+
+
+
+
+<!-- localStorage.setItem("eventTitle", title.value); -->
+
+
+<!-- <b>Amount Per: </b>1 fl oz (30g)</br>
+<b>Calories: </b>3</br>
+<b>Total Fat: </b>0.1 g</br>
+<b>Cholesterol: </b>0 mg</br>
+<b>Sodium: </b>4 mg</br>
+<b>Potassium: </b>35 mg</br>
+<b>Total Carbohydrate: </b>0.5 g</br>
+<b>Protein: </b>0 g</br>
+<b>Caffeine: </b>64 mg</br> -->
+
+
+
+
+
+
+<!-- if (e.target.tagName === 'LI') {
+    if ($(e.target).hasClass('coffee')) {
+        if (coffee) coffee.className = 'list-group-item coffee';
+        e.target.className = 'list-group-item coffee active';
+    };
+
+    if ($(e.target).hasClass('size')) {
+        if (size) size.className = 'list-group-item size';
+        e.target.className = 'list-group-item size active'
+    };
+}; -->
